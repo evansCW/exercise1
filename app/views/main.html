@@ -1,0 +1,28 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">Exercise1</h3>
+</div>
+
+<div class="row">
+    <div class="col-md-6"><h5>Search</h5></div>
+</div>
+<div class="row">
+    <div class="col-md-6"><input type="text" class="col-md-6" ng-model="personSearch"/></div>
+</div>
+
+<div class="row" style="margin-top: 20px;" ng-repeat="person in persons | filter:personSearch">
+    <div class="col-md-8"></div>
+    <div class="col-md-8">
+        <address>
+            <strong>{{ person.name }}</strong><br>
+            {{ person.address }}<br>
+            {{ person.city }}, {{ person.state }} 94107<br>
+            <abbr title="Phone">P:</abbr> {{ person.phone }}
+        </address>
+    </div>
+</div>
+
