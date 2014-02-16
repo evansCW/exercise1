@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("exercise1App").factory("DataService", [ function() {
+angular.module("hackathonApp").factory("DataService", [ function() {
     return {
         getData: function() {
             return  [

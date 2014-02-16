@@ -5,7 +5,8 @@
 
 var express = require('express'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    mongoose = require('mongoose');
 
 var app = express();
 
@@ -36,6 +37,16 @@ if ( 'development' == app.get('env') ) {
 app.get('/', function(req, res, next ) {
     res.redirect('/index.html');
 });
+
+//
+// Establish a connection to our employee database.
+//
+mongoose.connect('mongodb://localhost/hackathon');
+
+//
+// Restful API endpoints to the Employee database access.
+//
+var restapi = require('./app/node/modules/routes/restapi')(app);
 
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));

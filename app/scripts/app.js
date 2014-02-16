@@ -1,20 +1,19 @@
 'use strict';
 
-angular.module('exercise1App', [
+angular.module('hackathonApp', [
   'ngResource',
   'ngRoute'
-])
-  .config(function ($routeProvider) {
+]).config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/employee-list/employeeList.html',
+        controller: 'EmployeeListController'
       })
-      .when('/person-detail', {
-            templateUrl: 'views/person-detail/person-detail.html',
-            controller: 'PersonDetailController'
+      .when('/employee-detail/:id', {
+            templateUrl: 'views/employee-detail/employeeDetail.html',
+            controller: 'EmployeeDetailController'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+});

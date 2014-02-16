@@ -1,0 +1,21 @@
+
+<div class="row">
+    <div class="col-md-6"><h5>Search</h5></div>
+</div>
+<div class="row">
+    <div class="col-md-6"><input type="text" class="col-md-6" ng-model="employeeSearch"/></div>
+</div>
+
+<div class="container" style="max-height: 500px; overflow: scroll;">
+    <div class="row" style="margin-top: 20px;" ng-repeat="employee in employees | filter:employeeSearch | limitTo:3">
+        <div class="col-md-4">
+            <address>
+                <strong><a href="#/employee-detail/{{ employee._id }}">{{ employee.name }}</a></strong><br>
+                {{ employee.address }}<br>
+                {{ employee.city }}, {{ employee.state }} 94107<br>
+                <abbr title="Phone">P:</abbr> {{ employee.phone }}
+            </address>
+        </div>
+    </div>
+</div>
+
