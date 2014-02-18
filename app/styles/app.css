@@ -1,0 +1,65 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.button-footer {
+    margin-top: 15px;
+}
+
+.card .row .col-md-4 {
+    background-color: rgba(63, 91, 151, 0.25);
+    padding-bottom: 10px;
+}
+
+.card .row .col-md-8 {
+    background-color: rgba(63, 91, 151, 0.13);
+    padding-bottom: 13px;
+    border-bottom: 1px dotted rgba(63, 91, 151, 0.18);
+}
+
+.container {
+    max-width: 90%;
+}
+
+.form-header h1 {
+    font-weight: bold;
+    color: #428bca;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+    font-variant: small-caps;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+.row .section-header {
+    background-color: #428bca;
+}
+
+.section-header h4 {
+    font-weight: bold;
+    font-variant: small-caps;
+    color: white;
+    margin-bottom: 1px;
+    padding-bottom: 3px;
+    background-color: #428bca;
+    padding-left: 3px;
+}
+
+

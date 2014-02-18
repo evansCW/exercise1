@@ -1,6 +1,161 @@
 
-<div class="row">
+<div class="row form-header">
     <div class="col-md-12">
-        <h2>Employee Detail</h2>
+        <h1>{{ employee.name }}</h1>
     </div>
 </div>
+<div class="form-container">
+
+    <!-- Column Card Headers -->
+    <div class="row">
+        <div class="col-md-5 section-header">
+            <h4>employee information</h4>
+        </div>
+        <div class="col-md-offset-1 col-md-5 section-header">
+            <h4>employer information</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Employee Information Column -->
+        <div class="col-md-5 card">
+            <!--div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-name">Name:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-name">{{ employee.name }}</span>
+                </div>
+            </div-->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-address">Address:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-address">{{ employee.address }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-city">City:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-city">{{ employee.city }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-state">State:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-state">{{ employee.state }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-zip">Zip:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-zip">{{ employee.zip }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-email">Email:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-email">{{ employee.email }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-hdate">Hire Date:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-hdate">{{ employee.hireDate }}</span>
+                </div>
+            </div>
+        </div>
+        <!-- Employer Information Column -->
+        <div class="col-md-offset-1 col-md-5 card">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-company">Company:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-company">{{ employee.company }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-compaddress">Address:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-compaddress">{{ employee.companyAddress }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-compcity">City:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-compcity">{{ employee.companyCity }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-compstate">State:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-compstate">{{ employee.companyState }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-compzip">Zip:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-compzip">{{ employee.companyZip }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <label for="emp-compfax">FAX:</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <span id="emp-compfax">{{ employee.companyFax }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row button-footer">
+        <div class="col-md-offset-9 col-md-3"><a class="btn btn-primary pull-left" href="#/">Employee List</a></div>
+    </div>
+</div>
+

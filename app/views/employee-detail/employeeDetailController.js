@@ -1,4 +1,8 @@
-angular.module("hackathonApp").controller("EmployeeDetailController",
-    ['$scope', '$routeParams ', 'Employees', function ($scope, $routeParams, Employees) {
+"use strict";
+
+angular.module("hackathonApp")
+    .controller("EmployeeDetailController", ['$scope', '$routeParams', 'Employees', function ($scope, $routeParams, Employees) {
+
     $scope.employee = Employees.getEmployeeDetail($routeParams.id);
+
 }]);

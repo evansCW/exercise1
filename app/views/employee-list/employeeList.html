@@ -7,7 +7,7 @@
 </div>
 
 <div class="container" style="max-height: 500px; overflow: scroll;">
-    <div class="row" style="margin-top: 20px;" ng-repeat="employee in employees | filter:employeeSearch | limitTo:3">
+    <div class="row" style="margin-top: 20px;" ng-repeat="employee in employees | filter:employeeSearch | limitTo:10">
         <div class="col-md-4">
             <address>
                 <strong><a href="#/employee-detail/{{ employee._id }}">{{ employee.name }}</a></strong><br>
