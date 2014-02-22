@@ -8,14 +8,32 @@ body {
     margin-top: 15px;
 }
 
-.card .row .col-md-4 {
-    background-color: rgba(63, 91, 151, 0.25);
+.card {
+    background-color: #d0e1fa;
+}
+
+.card {
     padding-bottom: 10px;
 }
 
-.card .row .col-md-8 {
-    background-color: rgba(63, 91, 151, 0.13);
+.card .card-right {
     padding-bottom: 13px;
+}
+
+.card input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card .col-md-4 {
+    background-color: #d0e1fa;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card .col-md-8 {
+    background-color: #e4f0fa;
+    margin-top: 5px;
     border-bottom: 1px dotted rgba(63, 91, 151, 0.18);
 }
 
@@ -46,6 +64,10 @@ body {
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 19px;
+}
+
+.pad-md-right {
+    margin-right: 10px;
 }
 
 .row .section-header {
