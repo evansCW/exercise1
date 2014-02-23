@@ -1,8 +1,9 @@
 
 <div class="row form-header">
-    <div class="col-md-12">
+    <div class="col-md-9">
         <h1>{{ employee.name }}</h1>
     </div>
+    <div class="col-md-2"><button class="btn btn-primary pull-right" style="margin-top:30px;" ng-click="startEdit()">Edit</button></div>
 </div>
 <div class="form-container">
 
@@ -18,7 +19,7 @@
 
     <div class="row">
         <!-- Employee Information Column -->
-        <div class="col-md-5 card card-left form-group">
+        <div class="col-md-5 form-group well">
             <div class="row">
                 <div class="col-md-4">
                     <div class="pull-right">
@@ -26,7 +27,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-address"><input class="form-control" type="text" placeholder="Employee's Address" ng-model="employee.address" /></span>
+                    <span id="emp-address"><input class="form-control" type="text" placeholder="Employee's Address" ng-model="employee.address" ng-disabled="!editModeOn"/></span>
                 </div>
             </div>
             <div class="row">
@@ -36,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-city"><input class="form-control" type="text" placeholder="City" ng-model="employee.city" /></span>
+                    <span id="emp-city"><input class="form-control" type="text" placeholder="City" ng-model="employee.city" ng-disabled="!editModeOn"/></span>
                 </div>
             </div>
             <div class="row">
@@ -46,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-state"><input class="form-control" type="text" placeholder="State" ng-model="employee.state" /></span>
+                    <span id="emp-state"><input class="form-control" type="text" placeholder="State" ng-model="employee.state" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -56,7 +57,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-zip"><input class="form-control" type="text" placeholder="Zip" ng-model="employee.zip" /></span>
+                    <span id="emp-zip"><input class="form-control" type="text" placeholder="Zip" ng-model="employee.zip" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -66,7 +67,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-email"><input class="form-control" type="text" placeholder="Email" ng-model="employee.email" /></span>
+                    <span id="emp-email"><input class="form-control" type="text" placeholder="Email" ng-model="employee.email" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -76,12 +77,12 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-hdate"><input class="form-control" type="text" placeholder="Hire Date" ng-model="employee.hireDate" /></span>
+                    <span id="emp-hdate"><input class="form-control" type="text" placeholder="Hire Date" ng-model="employee.hireDate" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
         </div>
         <!-- Employer Information Column -->
-        <div class="col-md-offset-1 col-md-5 card card-right">
+        <div class="col-md-offset-1 col-md-5 well">
             <div class="row">
                 <div class="col-md-4">
                     <div class="pull-right">
@@ -89,7 +90,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-company"><input class="form-control" type="text" placeholder="Company" ng-model="employee.company" /></span>
+                    <span id="emp-company"><input class="form-control" type="text" placeholder="Company" ng-model="employee.company" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -99,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-compaddress"><input class="form-control" type="text" placeholder="Company Address" ng-model="employee.companyAddress" /></span>
+                    <span id="emp-compaddress"><input class="form-control" type="text" placeholder="Company Address" ng-model="employee.companyAddress" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -109,7 +110,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-compcity"><input class="form-control" type="text" placeholder="Company City" ng-model="employee.companyCity" /></span>
+                    <span id="emp-compcity"><input class="form-control" type="text" placeholder="Company City" ng-model="employee.companyCity" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -119,7 +120,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-compstate"><input class="form-control" type="text" placeholder="Company State" ng-model="employee.companyState" /></span>
+                    <span id="emp-compstate"><input class="form-control" type="text" placeholder="Company State" ng-model="employee.companyState" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -129,7 +130,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-compzip"><input class="form-control" type="text" placeholder="Company Zip" ng-model="employee.companyZip" /></span>
+                    <span id="emp-compzip"><input class="form-control" type="text" placeholder="Company Zip" ng-model="employee.companyZip" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
@@ -139,12 +140,12 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <span id="emp-compfax"><input class="form-control" type="text" placeholder="Company FAX" ng-model="employee.companyFax" /></span>
+                    <span id="emp-compfax"><input class="form-control" type="text" placeholder="Company FAX" ng-model="employee.companyFax" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row button-footer">
-        <div class="col-md-offset-9 col-md-3"><a class="btn btn-default pad-md-right" href="#/employee-detail/{{ employee._id }}">Cancel</a><button class="btn btn-primary" ng-click="save(employee._id)">Save</button></div>
+    <div class="row button-footer" ng-show="editModeOn">
+        <div class="col-md-offset-9 col-md-3"><button class="btn btn-default pad-md-right" ng-click="cancelEdit()">Cancel</button><button class="btn btn-primary" ng-click="save(employee._id)">Save</button></div>
     </div>
 </div>

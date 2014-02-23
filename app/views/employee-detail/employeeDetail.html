@@ -1,152 +1,169 @@
 
 <div class="row form-header">
-    <div class="col-md-9">
+    <div class="col-sm-8 col-md-9">
         <h1>{{ employee.name }}</h1>
     </div>
-    <div class="col-md-2"><a class="btn btn-primary pull-right" style="margin-top:30px;" href="#/employee-edit/{{ employee._id }}">Edit</a></div>
+    <div class="col-sm-3 col-md-2" style="margin-top:20px;">
+    <div class="btn-group pull-right">
+        <button type="button" class="btn btn-primary" ng-click="takeAction(currentMode)">{{ currentMode }}</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="" ng-click="takeAction('Edit')">Edit</a></li>
+            <li><a href="" ng-click="takeAction('Delete')">Delete</a></li>
+            <li><a href="" ng-click="takeAction('Tag')">Tag</a></li>
+        </ul>
+    </div>
+    </div>
 </div>
 <div class="form-container">
 
     <!-- Column Card Headers -->
     <div class="row">
-        <div class="col-md-5 section-header">
+        <div class="col-sm-5 col-md-5 section-header">
             <h4>employee information</h4>
         </div>
-        <div class="col-md-offset-1 col-md-5 section-header">
-            <h4>employer information</h4>
+        <div class="col-sm-offset-1 col-md-offset-1 col-sm-5 col-md-5 section-header">
+            <h4>current employer</h4>
         </div>
     </div>
 
     <div class="row">
         <!-- Employee Information Column -->
-        <div class="col-md-5 card card-left">
+        <div class="col-sm-5 col-md-5 form-group well">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-xs-12 col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-address">Address:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-address">{{ employee.address }}</span>
+                <div class="col-xs-12 col-sm-9 col-md-8">
+                    <span id="emp-address"><input class="form-control" type="text" placeholder="Employee's Address" ng-model="employee.address" ng-disabled="!editModeOn"/></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-city">City:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-city">{{ employee.city }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-city"><input class="form-control" type="text" placeholder="City" ng-model="employee.city" ng-disabled="!editModeOn"/></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-state">State:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-state">{{ employee.state }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-state"><input class="form-control" type="text" placeholder="State" ng-model="employee.state" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-zip">Zip:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-zip">{{ employee.zip }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-zip"><input class="form-control" type="text" placeholder="Zip" ng-model="employee.zip" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-email">Email:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-email">{{ employee.email }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-email"><input class="form-control" type="email" placeholder="Email" ng-model="employee.email" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-hdate">Hire Date:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-hdate">{{ employee.hireDate | date:'longDate' }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-hdate"><input class="form-control" type="text" placeholder="Hire Date" ng-model="employee.hireDate" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
         </div>
+
         <!-- Employer Information Column -->
-        <div class="col-md-offset-1 col-md-5 card card-right">
+        <div class="col-sm-offset-1 col-md-offset-1 col-sm-5 col-md-5 well">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-company">Company:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-company">{{ employee.company }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-company"><input class="form-control" type="text" placeholder="Company" ng-model="employee.company" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-compaddress">Address:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-compaddress">{{ employee.companyAddress }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-compaddress"><input class="form-control" type="text" placeholder="Company Address" ng-model="employee.companyAddress" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-compcity">City:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-compcity">{{ employee.companyCity }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-compcity"><input class="form-control" type="text" placeholder="Company City" ng-model="employee.companyCity" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-compstate">State:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-compstate">{{ employee.companyState }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-compstate"><input class="form-control" type="text" placeholder="Company State" ng-model="employee.companyState" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-compzip">Zip:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-compzip">{{ employee.companyZip }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-compzip"><input class="form-control" type="text" placeholder="Company Zip" ng-model="employee.companyZip" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-3 col-md-4">
                     <div class="pull-right">
                         <label for="emp-compfax">FAX:</label>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <span id="emp-compfax">{{ employee.companyFax }}</span>
+                <div class="col-sm-9 col-md-8">
+                    <span id="emp-compfax"><input class="form-control" type="text" placeholder="Company FAX" ng-model="employee.companyFax" ng-disabled="!editModeOn" /></span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row button-footer">
-        <div class="col-md-offset-10 col-md-2"><a class="btn btn-primary pull-left" href="#/">Employee List</a></div>
+
+    <div class="row button-footer" ng-show="editModeOn">
+        <div class="col-sm-offset-8 col-md-offset-9 col-sm-4 col-md-3"><button class="btn btn-default pad-md-right" ng-click="cancel()">Cancel</button><button class="btn btn-primary" ng-click="save(employee._id)">Save</button></div>
+    </div>
+    <div class="row button-footer" ng-show="deleteModeOn">
+        <div class="col-sm-offset-7 col-md-offset-8 col-sm-5 col-md-4"><button class="btn btn-default pad-md-right" ng-click="cancel()">Cancel</button><button class="btn btn-primary" ng-click="delete(employee._id)">Confirm Delete</button></div>
     </div>
 </div>
-

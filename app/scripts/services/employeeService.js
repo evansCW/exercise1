@@ -23,6 +23,10 @@ angular.module("hackathonApp").factory("Employees", ['$http', '$resource', funct
         //
         getEmployeeDetail: function(id) {
             return Employee.get({id: id});
+        },
+
+        saveEmployee: function(employee) {
+
         }
     }
 }]);

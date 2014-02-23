@@ -13,10 +13,6 @@ angular.module('hackathonApp', [
             templateUrl: 'views/employee-detail/employeeDetail.html',
             controller: 'EmployeeDetailController'
         })
-        .when('/employee-edit/:id', {
-            templateUrl: 'views/employee-detail/employeeEdit.html',
-            controller: 'EmployeeDetailController'
-        })
         .otherwise({
             redirectTo: '/'
         });
