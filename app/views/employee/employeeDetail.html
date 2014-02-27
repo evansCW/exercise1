@@ -1,7 +1,7 @@
 
 <div class="row form-header">
     <div class="col-sm-8 col-md-9">
-        <h1>{{ employee.name }}</h1>
+        <h1><input class="form-control" type="text" placeholder="Employee's Name" ng-model="employee.name" ng-disabled="!editModeOn"/></h1>
     </div>
     <div class="col-sm-3 col-md-2" style="margin-top:20px;">
     <div class="btn-group pull-right">
@@ -23,7 +23,11 @@
     <!-- Column Card Headers -->
     <div class="row">
         <div class="col-sm-5 col-md-5 section-header">
-            <h4>employee information</h4>
+            <h4>
+                <i class="pad-md-right glyphicon glyphicon-thumbs-up" ng-click="toggleStatus()" ng-show="isActive()"></i>
+                <i class="pad-md-right glyphicon glyphicon-thumbs-down" ng-click="toggleStatus()" ng-show="!isActive()"></i>
+                employee information
+            </h4>
         </div>
         <div class="col-sm-offset-1 col-md-offset-1 col-sm-5 col-md-5 section-header">
             <h4>current employer</h4>
@@ -161,7 +165,7 @@
     </div>
 
     <div class="row button-footer" ng-show="editModeOn">
-        <div class="col-sm-offset-8 col-md-offset-9 col-sm-4 col-md-3"><button class="btn btn-default pad-md-right" ng-click="cancel()">Cancel</button><button class="btn btn-primary" ng-click="save(employee._id)">Save</button></div>
+        <div class="col-sm-offset-8 col-md-offset-9 col-sm-4 col-md-3"><button class="btn btn-default pad-md-right" ng-click="cancel()">Cancel</button><button class="btn btn-primary" ng-click="save(employee)">Save</button></div>
     </div>
     <div class="row button-footer" ng-show="deleteModeOn">
         <div class="col-sm-offset-7 col-md-offset-8 col-sm-5 col-md-4"><button class="btn btn-default pad-md-right" ng-click="cancel()">Cancel</button><button class="btn btn-primary" ng-click="delete(employee._id)">Confirm Delete</button></div>

@@ -14,6 +14,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/bootswatch/superhero/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/app.css -->
@@ -33,6 +34,7 @@
         </ul>
         <h3 class="text"> Hackathon - Exercise 3</h3>
     </div>
+    <toaster-container toaster-options="{'position-class': 'toast-bottom-full-width'}"></toaster-container>
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
@@ -58,17 +60,20 @@
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
 
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="views/employee-list/employeeListController.js"></script>
+        <script src="views/employee/employeeListController.js"></script>
         <script src="scripts/services/employeeService.js"></script>
-        <script src="views/employee-detail/employeeDetailController.js"></script>
+        <script src="views/employee/employeeDetailController.js"></script>
+        <script src="views/employee/employeeAddController.js"></script>
         <!-- endbuild -->
 </body>
 </html>

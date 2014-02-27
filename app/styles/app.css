@@ -17,6 +17,12 @@ body {
     padding-bottom: 5px;
 }
 
+h1 .form-control, h1 .form-control:disabled {
+    font-size: 39px;
+    height: 45px;
+    line-height: 40px;
+}
+
 .form-control {
     border: 1px solid transparent;
     background-color: transparent;
@@ -60,6 +66,10 @@ body {
   padding-bottom: 19px;
 }
 
+.pad-md-left {
+    margin-left: 10px;
+}
+
 .pad-md-right {
     margin-right: 10px;
 }
@@ -85,3 +95,16 @@ body {
 }
 
 
+.toast-success {
+    background-color: #5cb85c;
+}
+
+#toast-container > div.ng-enter,
+#toast-container > div.ng-leave
+{
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}

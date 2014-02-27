@@ -2,15 +2,21 @@
 
 angular.module('hackathonApp', [
   'ngResource',
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate',
+  'toaster'
 ]).config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'views/employee-list/employeeList.html',
+            templateUrl: 'views/employee/employeeList.html',
             controller: 'EmployeeListController'
         })
-        .when('/employee-detail/:id', {
-            templateUrl: 'views/employee-detail/employeeDetail.html',
+        .when('/employee/add', {
+            templateUrl: 'views/employee/employeeDetail.html',
+            controller: 'EmployeeAddController'
+        })
+        .when('/employee/:id', {
+            templateUrl: 'views/employee/employeeDetail.html',
             controller: 'EmployeeDetailController'
         })
         .otherwise({
